@@ -46,3 +46,34 @@
     const event = new CustomEvent('custom'); // создать своё событие
 
     smth.dispatch(event); // активировать событие.
+
+## Создаём сервер со своим HTML.
+
+Для начала устанавливаем express:
+
+     nmp i express
+     
+ После чего получаем его:
+ 
+    // порт
+    const PORT = process.env.PORT || 80;
+    
+    const express = require('express'); // берём Express
+    
+    const app = express(); // создаём Express-приложение
+    
+    // создаём маршрут для главной страницы
+    app.get('/', (res,req) =>{
+    
+    // при помощи этого мы добавляем html файл.
+    res.sendfile('index.html');
+    
+    });
+     
+    // запускаем
+    app.listen(PORT);
+    
+    
+    
+    
+    
