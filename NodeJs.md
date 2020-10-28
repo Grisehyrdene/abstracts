@@ -74,6 +74,10 @@
     app.listen(PORT);
     
     
-    
+ #Измерение времени.
+ 
+    consone.time('t1'); // начало промежука
+    /* doing something */
+    console.timeEnd('t1') // конец промежука
     
     
