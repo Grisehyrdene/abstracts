@@ -80,4 +80,30 @@
     /* doing something */
     console.timeEnd('t1') // конец промежука
     
+# Промисы.
+
+    const pr = Promise.resolved(value); // разрешённый промис, будет содержать объект со значением value
+    const pr = Promise.rejected(value); // отклонённый промис, будет содержать объект со значением value
+ 
+ Пример использования промиса:
+ 
+    pr.then(x => x**2) // сначала разрешённый промис попадает сюда, потом с ним происходит арифметическая операция
+      .then(x => x * 2) // потом он попадает сюда
+      .then(x => x + 1) // потом сюда
+      .then(x => console.log(x)); // в конце выводится в консоль
+      
+ Поймать ошибку:
+ 
+    pr.catch(x => console.log(x));
+ 
+ Можно вызывать слушатель событий, который будет улавливать ошибки:
+ 
+    window.addEventListener('unhandledrejection', () => ... );
+    
+ Создать промис через конструктор:
+ 
+    const pr1 = new Promise((resolve, reject) => reject('Ошибка')); // ошибка, можно пользоваться catch
+    const pr2 = new Promise((resolve, reject) => resolve('Успех')); // успех, можно пользоваться then
+    
+
     
