@@ -11,7 +11,7 @@
     
 В package.json меняем в "start" значение на "node index"
     
-    nmp i express
+    npm i express
     
 Код простейшего приложения:
     
