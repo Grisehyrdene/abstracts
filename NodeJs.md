@@ -137,3 +137,7 @@
     fs.promises.readFile('...'); // получим промис
     
     
+#Fetch.
+
+    fetch(url); // по умолчанию выполняет метод GET
+    
